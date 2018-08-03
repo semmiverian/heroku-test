@@ -4,8 +4,6 @@ const loans = require('./routes/loans')
 const app = express()
 require('dotenv').config()
 
-
-
 app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
@@ -13,7 +11,9 @@ app.use(express.urlencoded({ extended: false}))
 app.use('/books', books)
 app.use('/loans', loans)
 
-app.listen(process.env.port, () => {
-  console.log('App listening on port' + process.env.port)
+const port = process.env.port || 3000
+
+app.listen(port, () => {
+  console.log('App listening on port' + port)
 })
 
