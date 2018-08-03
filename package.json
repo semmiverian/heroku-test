@@ -1,0 +1,22 @@
+{
+  "name": "live-code-week-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node app.js",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Semmi Verian <semmivp1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dot-env": "0.0.1",
+    "dotenv": "6.0.0",
+    "ejs": "2.6.1",
+    "express": "4.16.3",
+    "pg": "7.4.3",
+    "sequelize": "4.38.0"
+  }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: none;
+      border-spacing: 2px;
+      border-color: grey;
+      width: 100%
+    }
+
+    table td {
+      padding: .75rem;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    table th {
+      padding: .75rem;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    thead {
+      display: table-header-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+
+    tbody {
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+
+    tbody>tr>td {
+      margin: 2em;
+    }
+
+    tbody>tr:nth-of-type(odd) {
+      background-color: rgba(0, 0, 0, .05);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: .5em;
+    }
+
+    input[type="submit"] {
+      background-color: #1C3D5A;
+      border-color: #B8C2CC;
+      padding: .5em;
+      border-radius: .5em;
+      color: white;
+    }
+
+    .error {
+      background-color: #EF5753;
+      padding-top: .5em;
+      padding-bottom: .5em;
+    }
+
+    .error h2 {
+      margin-left: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Edit Book
+    <%= book.title %>
+  </h1>
+
+  <hr />
+
+  <!-- Form -->
+
+  <% if (error) { %>
+    <div class="error">
+      <h2>Error</h2>
+      <ul>
+        <% error.forEach(err => { %>
+          <li>
+            <%= err %>
+          </li>
+          <% }) %>
+      </ul>
+    </div>
+    <% } %>
+
+
+      <h2>Edit Book</h2>
+      <form action="<%= `/books/${book.id}/update` %>" method="POST">
+        <label for="">
+          Title
+          <input type="text" name="title" value="<%= book.title %>">
+        </label>
+        <label for="">Description
+          <input type="text" name="description" value="<%= book.description %>">
+        </label>
+        <label for="">Author
+          <input type="text" name="author" value="<%= book.author %>">
+        </label>
+
+        <input type="submit" value="Submit">
+      </form>
+
+      <hr />
+
+</body>
+
+</html>
