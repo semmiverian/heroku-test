@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false}))
 app.use('/books', books)
 app.use('/loans', loans)
 
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 
 app.listen(port, () => {
   console.log('App listening on port' + port)
