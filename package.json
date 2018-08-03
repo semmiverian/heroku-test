@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run": "node app.js",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "Semmi Verian <semmivp1@gmail.com>",
